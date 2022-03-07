@@ -4,13 +4,14 @@ let username = document.getElementById('name')
 let liveCount = 0
 let user = 'stephen'
 
+
 button.addEventListener('click', () => {
   username = document.getElementById('name')
   let box = document.querySelector('.increment')
   box.style.setProperty('display', 'block')
   let heading = document.querySelector('.heading')
   heading.innerText = 'Welcome, ' + username.value
-  get(`http://basic-web.dev.avc.web.usf.edu/:${username.value}`).then(function (response) {
+  get(`http://basic-web.dev.avc.web.usf.edu/:${username.value.toLowerCase()}`).then(function (response) {
     if (response.status == 200) {
       username = response.data.id;
       const liveCount = response.data.score;
@@ -21,7 +22,7 @@ button.addEventListener('click', () => {
       else counter.innerHTML = "Press increment"
     }
     else {
-      post(`http://basic-web.dev.avc.web.usf.edu/:${username.value}`, { score: 0 });
+      post(`http://basic-web.dev.avc.web.usf.edu/:${username.value.toLowerCase()}`, { score: 0 });
       var counter = document.querySelector("#twocount");
       counter.innerHTML = 0;
     }
@@ -62,7 +63,7 @@ counterBtn.addEventListener('click', () => {
   if (liveCount % 15 == 0) span.innerText = "FizzBuzz";
   else if (liveCount % 3 == 0) span.innerText = "Fizz";
   else if (liveCount % 5 == 0) span.innerText = "Buzz";
-  fetch(`http://basic-web.dev.avc.web.usf.edu/:${username}`, {
+  fetch(`http://basic-web.dev.avc.web.usf.edu/:${username.toLowerCase()}`, {
     method: 'POST',
     headers: {
       "Content-type": "application/json; charset=UTF-8"
