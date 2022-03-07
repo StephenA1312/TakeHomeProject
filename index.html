@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/app.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form>
-        <h1>Login</h1>
-        <div class="textbox">
-            <input type="Username" placeholder="Username">
-        </div>
-        <input type="submit" value="Login" class="login">
-    </form>
+    <h1 style="text-align: center;margin-bottom: 50px;">Welcome</h1>
+    <div class="row">
+        <input placeholder="Enter your username" type="text" id="name"><br>
+        <button type="button" id="submit">submit</button>
+    </div>
+   
+    <div class="increment">
+        <h1 class="heading"></h1>
+        <p>Your current FizzBuzz value is: <span id="twocount"></span></p>
+        <button id = "counterbtn">Click to Increment</button>
+    </div>
+    <script src="js/app.js"></script>
 </body>
 </html>
